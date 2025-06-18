@@ -58,6 +58,3 @@ def handle_message(event):
                 messages=[TextMessage(text=reply_text)]
             )
         )
-
-if __name__ == "__main__":
-    app.run()
