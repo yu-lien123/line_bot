@@ -1,7 +1,26 @@
+from flask import Flask, request, abort
+import os
+from linebot.v3 import WebhookHandler
+from linebot.v3.exceptions import InvalidSignatureError
+from linebot.v3.messaging import (
+    Configuration,
+    ApiClient,
+    MessagingApi,
+    ReplyMessageRequest,
+    TextMessage)
+from linebot.v3.webhooks import (
+    MessageEvent,
+    TextMessageContent)
+import requests
+from bs4 import BeautifulSoup
 app = Flask(__name__)
 
+
+
+
 configuration = Configuration(access_token=os.getenv('access_token'))
-line_handler = WebhookHandler(os.getenv('Channel_secret'))
+
+line_handler=WebhookHandler(os.getenv('chaaa'))
 
 def get_new():
   url = "https://money.udn.com/money/vipbloomberg/time?from=edn_navibar"
